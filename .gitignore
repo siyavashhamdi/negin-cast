@@ -5,6 +5,7 @@ node_modules
 android/.gradle
 android/build
 android/app/build
+android/app/build/outputs/apk/debug/app-debug.apk
 android/.idea
 android/local.properties
 android/capacitor-cordova-android-plugins/build
