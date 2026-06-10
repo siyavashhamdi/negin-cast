@@ -3,12 +3,12 @@ apply plugin: 'com.android.application'
 def readDefaultServerUrl = {
     def envFile = rootProject.file('../.env')
     if (!envFile.exists()) {
-        return 'http://192.168.1.2:5173/'
+        return 'http://198.144.180.146:6000/'
     }
 
     def line = envFile.readLines().find { it.trim().startsWith('CAPACITOR_SERVER_URL=') }
     if (!line) {
-        return 'http://192.168.1.2:5173/'
+        return 'http://198.144.180.146:6000/'
     }
 
     return line.substring(line.indexOf('=') + 1).trim()

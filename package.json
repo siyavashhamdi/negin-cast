@@ -3,13 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "build": "npm run build:web",
     "build:web": "npm run build --prefix web/app",
-    "dev:web": "npm run dev --prefix web/app -- --host 0.0.0.0",
+    "dev:web": "npm run dev --prefix web/app",
+    "start": "pm2 start ecosystem.config.cjs",
+    "stop": "pm2 stop ecosystem.config.cjs",
+    "restart": "pm2 restart ecosystem.config.cjs",
+    "logs": "pm2 logs",
+    "deploy": "bash scripts/deploy.sh",
     "cap:sync": "cap sync",
     "cap:sync:android": "cap sync android",
     "cap:open:android": "cap open android",
     "android:prepare": "npm run build:web && cap sync android",
-    "android:apk": "npm run android:prepare && cd android && GRADLE_USER_HOME=$HOME/.gradle ./gradlew assembleDebug"
+    "android:apk": "npm run android:prepare && cd android && GRADLE_USER_HOME=$HOME/.gradle ./gradlew assembleDebug && cp app/build/outputs/apk/debug/app-debug.apk ../web/app/public/app-debug.apk"
   },
   "dependencies": {
     "@capacitor/android": "^7.2.0",
