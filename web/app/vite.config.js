@@ -113,12 +113,12 @@ export default defineConfig(({ mode }) => {
     server: {
       allowedHosts,
       host: '0.0.0.0',
-      port: 6000,
+      port: 5600,
     },
     preview: {
       allowedHosts,
       host: '0.0.0.0',
-      port: 6000,
+      port: 5600,
     },
   }
 })

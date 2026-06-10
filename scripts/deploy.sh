@@ -37,8 +37,8 @@ pm2 save
 
 echo
 echo "Deployment complete."
-echo "Web app: http://0.0.0.0:6000"
-echo "Public URL: http://198.144.180.146:6000/"
+echo "Web app: http://0.0.0.0:5600"
+echo "Public URL: http://198.144.180.146:5600/"
 echo
 echo "Useful commands:"
 echo "  pm2 status"

@@ -4,8 +4,8 @@ Monorepo for the NeginCast web app (`web/app/`) and Android Capacitor wrapper (`
 
 Production URL:
 
-- Web app: `http://198.144.180.146:6000/`
-- Android remote URL: `http://198.144.180.146:6000/`
+- Web app: `http://198.144.180.146:5600/`
+- Android remote URL: `http://198.144.180.146:5600/`
 
 ## Project layout
 
@@ -44,7 +44,7 @@ cp .env.example .env
 Default value:
 
 ```env
-CAPACITOR_SERVER_URL=http://198.144.180.146:6000/
+CAPACITOR_SERVER_URL=http://198.144.180.146:5600/
 ```
 
 ### Web app `.env`
@@ -61,7 +61,7 @@ ALLOWED_HOSTS=198.144.180.146,localhost
 
 ## Run on server (PM2)
 
-This project uses the same deployment style as `test_01`: build the web app, then serve it with PM2 on port `6000`.
+This project uses the same deployment style as `test_01`: build the web app, then serve it with PM2 on port `5600`.
 
 From the repo root on the server:
 
@@ -74,12 +74,12 @@ What `npm run deploy` does:
 1. Installs dependencies
 2. Copies the latest APK into `web/app/public/app-debug.apk` if it exists
 3. Builds the web app
-4. Starts `negincast-web` with PM2 on `http://0.0.0.0:6000`
+4. Starts `negincast-web` with PM2 on `http://0.0.0.0:5600`
 
 Public URL after deploy:
 
 ```text
-http://198.144.180.146:6000/
+http://198.144.180.146:5600/
 ```
 
 ### Manage server process
@@ -100,7 +100,7 @@ npm run deploy
 
 ## Local development
 
-Run the web app locally on port `6000`:
+Run the web app locally on port `5600`:
 
 ```bash
 npm install
@@ -111,7 +111,7 @@ npm run dev:web
 Open:
 
 ```text
-http://localhost:6000/
+http://localhost:5600/
 ```
 
 ## Build Android APK
@@ -119,7 +119,7 @@ http://localhost:6000/
 1. Make sure `.env` contains:
 
 ```env
-CAPACITOR_SERVER_URL=http://198.144.180.146:6000/
+CAPACITOR_SERVER_URL=http://198.144.180.146:5600/
 ```
 
 2. Build APK:
@@ -150,7 +150,7 @@ So the landing page download button serves `NeginCast.apk`.
 
 ## Android behavior
 
-- Online: Android app loads `http://198.144.180.146:6000/`
+- Online: Android app loads `http://198.144.180.146:5600/`
 - Offline: Android app falls back to the bundled web build inside the APK
 - Settings button in the Android app lets you change the server URL manually
 
@@ -158,7 +158,7 @@ So the landing page download button serves `NeginCast.apk`.
 
 | Command | Description |
 | --- | --- |
-| `npm run dev:web` | Run web app locally on port 6000 |
+| `npm run dev:web` | Run web app locally on port 5600 |
 | `npm run build:web` | Build web app to `web/app/dist` |
 | `npm run deploy` | Build and start web app with PM2 |
 | `npm run android:apk` | Build Android debug APK |
@@ -166,9 +166,9 @@ So the landing page download button serves `NeginCast.apk`.
 
 ## Firewall note
 
-Make sure port `6000` is open on the server:
+Make sure port `5600` is open on the server:
 
 ```bash
 # example
-sudo ufw allow 6000/tcp
+sudo ufw allow 5600/tcp
 ```
