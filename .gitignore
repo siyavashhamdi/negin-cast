@@ -5,11 +5,7 @@ web/app/.env
 
 android/.gradle
 android/build
-android/app/build/*
-!android/app/build/outputs/
-!android/app/build/outputs/apk/
-!android/app/build/outputs/apk/debug/
-!android/app/build/outputs/apk/debug/app-debug.apk
+android/app/build
 android/.idea
 android/local.properties
 android/capacitor-cordova-android-plugins/build
