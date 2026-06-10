@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">NeginCast</string>
+    <string name="title_activity_main">NeginCast</string>
+    <string name="package_name">com.glowplay.app</string>
+    <string name="custom_url_scheme">com.glowplay.app</string>
+</resources>
